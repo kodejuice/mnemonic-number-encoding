@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-// Mnemonic Phrase Generator
+// Mnemonic Coding
 //
 // This project is licensed under the MIT license.
 // For more information, see https://opensource.org/licenses/MIT.
@@ -8,7 +8,6 @@
 const wordslist = require("../words-list.json");
 
 const isModule = require.main !== module;
-
 // map each word to its index
 const wordsindex = {};
 wordslist.map((word, index) => {
@@ -48,7 +47,7 @@ const encode = (number) => {
       curr += top;
     }
     // Otherwise, convert the current binary string to decimal and append the
-    //  word at that index then reset the current string with the next bit
+    // word at that index then reset the current string with the next bit
     else {
       words.push(wordslist[parseInt(curr, 2)]);
       curr = "1" + top;
@@ -71,9 +70,9 @@ const decode = (word_list) => {
   }
 
   // If the word_list argument is a string, split it by non-alphabetical characters
-  let words = Array.isArray(word_list)
-    ? word_list
-    : word_list.split(/[^a-z]+/i);
+  let words = (
+    Array.isArray(word_list) ? word_list : word_list.split(/[^a-z]+/i)
+  ).map((w) => w.toLowerCase());
 
   let binary_string = "";
   for (const word of words) {
