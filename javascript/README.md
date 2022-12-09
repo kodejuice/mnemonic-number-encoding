@@ -2,7 +2,7 @@
 
 ## Command line
 
-`$ node mnemonic.js [number | list of words...]`
+`node mnemonic.js [number | list of words...]`
 
 ```bash
 node mnemonic.js 1142404700107262918407392145127590167800812000956
