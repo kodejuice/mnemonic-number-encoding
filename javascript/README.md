@@ -6,11 +6,11 @@
 
 ```bash
 node mnemonic.js 1142404700107262918407392145127590167800812000956
-# undertalk occurrence nonfruition sled sighthole rubstone poodle assession entrant adventively
+# art bondig binas semien dendrology completion hirudinize fortitude armatured
 ```
 
 ```bash
-node mnemonic.js "undertalk occurrence nonfruition sled sighthole rubstone poodle assession entrant adventively"
+node mnemonic.js "art bondig binas semien dendrology completion hirudinize fortitude armatured"
 # 1142404700107262918407392145127590167800812000956
 ```
 
@@ -20,9 +20,9 @@ node mnemonic.js "undertalk occurrence nonfruition sled sighthole rubstone poodl
 const {encode, decode} = require('./mnemonic.js');
 
 console.log(encode("1142404700107262918407392145127590167800812000956"))
-// => "undertalk occurrence nonfruition sled sighthole rubstone poodle assession entrant adventively"
+// => "art bondig binas semien dendrology completion hirudinize fortitude armatured"
 
-console.log(decode("undertalk occurrence nonfruition sled sighthole rubstone poodle assession entrant adventively"))
+console.log(decode("art bondig binas semien dendrology completion hirudinize fortitude armatured"))
 // => "1142404700107262918407392145127590167800812000956"
 ```
 
@@ -30,5 +30,5 @@ console.log(decode("undertalk occurrence nonfruition sled sighthole rubstone poo
 
 ```javascript
 console.log(encode("0xc81b32ce5281c5C2b5a53F6bd2425350F081d6bC"))
-// => "undertalk occurrence nonfruition sled sighthole rubstone poodle assession entrant adventively"
+// => "art bondig binas semien dendrology completion hirudinize fortitude armatured"
 ```

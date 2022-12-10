@@ -1,0 +1,3 @@
+# Mnemonic Coding
+
+A system that lets you convert numbers into words for easy recall, similarly to [Mnemonic Generation (BIP39)](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki), but with a larger word dictionary, so the output is much shorter for large numbers.
