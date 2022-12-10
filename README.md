@@ -1,4 +1,4 @@
-# Mnemonic Coding
+# Mnemonic Number Encoding
 
 A method of encoding numbers into a sequence of words.
 
@@ -10,7 +10,7 @@ Additionally, the words used in the mnemonic code do not need to be easy to reme
 
 ## Motiviation
 
-Mnemonic coding is useful when you want an easy way to encode and store a number in a format that is easy to reproduce.
+Mnemonic number encoding is useful when you want an easy way to encode and store a number in a format that is easy to reproduce.
 
 For example, you might want to encode a secret key, an account number, a crypto wallet address or any other sensitive information into a sequence of words that is easy to type in.
 
@@ -18,7 +18,7 @@ For example, you might want to encode a secret key, an account number, a crypto 
 
 ### Encoding
 
-Mnemonic coding works by taking a number and converting it into a sequence of words. It does this by dividing the number into chunks of bits, and then converting each chunk into a word from a dictionary.
+It works by taking a number and converting it into a sequence of words. It does this by dividing the number into chunks of bits, and then converting each chunk into a word from a dictionary.
 
 E.g
 
@@ -94,6 +94,7 @@ The words have been collated from several sources:
 - <https://github.com/aruljohn/popular-baby-names/>
 - <https://github.com/dwyl/english-words/blob/master/words_alpha.txt>
 - <https://sourceforge.net/projects/cracklib/files/cracklib-words/>
+- Pythons nltk package `nltk.corpus.words.words()`
 
 ## Usage
 
@@ -112,6 +113,10 @@ console.log(decode("art bondig binas semien dendrology completion hirudinize for
 ```
 
 The implementation of the mnemonic coding system is available in several different programming languages in this repository.
+
+## Contributing
+
+This repository is collaborative, which means that anyone can contribute to it by adding new code or improving existing code. If you have an implementation of the mnemonic coding system in a language that is not already represented in this repository, you can submit a pull request to add your implementation. This will make the repository more comprehensive and useful to other users. Similarly, if you see any code that you think can be improved, you can also submit a pull request with your suggested changes.
 
 ## License
 

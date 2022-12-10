@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-// Mnemonic Coding
+// Mnemonic Number Encoding
 //
 // This project is licensed under the MIT license.
 // For more information, see https://opensource.org/licenses/MIT.
