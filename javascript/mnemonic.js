@@ -26,7 +26,7 @@ const encode = (number) => {
 
   // Calculate the maximum bit length of the binary representation
   // of the numbers in the wordslist
-  const maxBitLength = Number(Math.log2(wordslist.length));
+  const maxBitLength = Math.floor(Math.log2(wordslist.length));
 
   const binary_string = number_to_encode.toString(2).split("");
 
@@ -37,11 +37,11 @@ const encode = (number) => {
   for (let i = 0; i < binary_string.length; i++) {
     const top = binary_string[i];
 
-    // If the current string of bits is less than the max bit length
+    // If the current string of bits is less than or equal the max bit length
     // and the current string plus the next bit can be converted to
     // a valid index for the wordslist array, append the next bit
     if (
-      curr.length < maxBitLength &&
+      curr.length <= maxBitLength &&
       parseInt(curr + top, 2) < wordslist.length
     ) {
       curr += top;
@@ -80,7 +80,9 @@ const decode = (word_list) => {
       if (!isModule) console.error(`'${word}' not found in word list`);
       return null;
     }
-    const wordIndexBits = wordsindex[word].toString(2).slice(1);
+    const wordIndexBits = wordsindex[word]
+      .toString(2) // convert to binary
+      .slice(1); // remove first bit
     binary_string += wordIndexBits;
   }
 
