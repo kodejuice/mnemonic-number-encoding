@@ -18,7 +18,7 @@ For example, you might want to encode a secret key, an account number, a crypto 
 
 ### Encoding
 
-It works by taking a number and converting it into a sequence of words. It does this by dividing the number into chunks of bits, and then converting each chunk into a word from a dictionary.
+It works by taking a number and converting it into a sequence of words. It does this by dividing the number into chunks of bits, and then mapping each chunk into a word from a dictionary.
 
 E.g
 
