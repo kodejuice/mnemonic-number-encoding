@@ -6,11 +6,11 @@
 
 ```bash
 python mnemonic.py 1142404700107262918407392145127590167800812000956
-# art bondig binas semien dendrology completion hirudinize fortitude armatured
+# recombining mantech vituline intenseness hankard dispondaic crenna baguettes kags
 ```
 
 ```bash
-python mnemonic.py "art bondig binas semien dendrology completion hirudinize fortitude armatured"
+python mnemonic.py recombining mantech vituline intenseness hankard dispondaic crenna baguettes kags
 # 1142404700107262918407392145127590167800812000956
 ```
 
@@ -20,9 +20,9 @@ python mnemonic.py "art bondig binas semien dendrology completion hirudinize for
 from mnemonic import encode, decode
 
 print(encode("1142404700107262918407392145127590167800812000956"))
-# => "art bondig binas semien dendrology completion hirudinize fortitude armatured"
+# => "recombining mantech vituline intenseness hankard dispondaic crenna baguettes kags"
 
-print(decode("art bondig binas semien dendrology completion hirudinize fortitude armatured"))
+print(decode("recombining mantech vituline intenseness hankard dispondaic crenna baguettes kags"))
 # => "1142404700107262918407392145127590167800812000956"
 ```
 
@@ -30,5 +30,5 @@ print(decode("art bondig binas semien dendrology completion hirudinize fortitude
 
 ```python
 print(encode("0xc81b32ce5281c5C2b5a53F6bd2425350F081d6bC"))
-// => "art bondig binas semien dendrology completion hirudinize fortitude armatured"
+// => "recombining mantech vituline intenseness hankard dispondaic crenna baguettes kags"
 ```

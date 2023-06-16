@@ -6,11 +6,11 @@
 
 ```bash
 node mnemonic.js 1142404700107262918407392145127590167800812000956
-# art bondig binas semien dendrology completion hirudinize fortitude armatured
+# recombining mantech vituline intenseness hankard dispondaic crenna baguettes kags
 ```
 
 ```bash
-node mnemonic.js "art bondig binas semien dendrology completion hirudinize fortitude armatured"
+node mnemonic.js recombining mantech vituline intenseness hankard dispondaic crenna baguettes kags
 # 1142404700107262918407392145127590167800812000956
 ```
 
@@ -20,9 +20,9 @@ node mnemonic.js "art bondig binas semien dendrology completion hirudinize forti
 const {encode, decode} = require('./mnemonic.js');
 
 console.log(encode("1142404700107262918407392145127590167800812000956"))
-// => "art bondig binas semien dendrology completion hirudinize fortitude armatured"
+// => "recombining mantech vituline intenseness hankard dispondaic crenna baguettes kags"
 
-console.log(decode("art bondig binas semien dendrology completion hirudinize fortitude armatured"))
+console.log(decode("recombining mantech vituline intenseness hankard dispondaic crenna baguettes kags"))
 // => "1142404700107262918407392145127590167800812000956"
 ```
 
@@ -30,5 +30,5 @@ console.log(decode("art bondig binas semien dendrology completion hirudinize for
 
 ```javascript
 console.log(encode("0xc81b32ce5281c5C2b5a53F6bd2425350F081d6bC"))
-// => "art bondig binas semien dendrology completion hirudinize fortitude armatured"
+// => "recombining mantech vituline intenseness hankard dispondaic crenna baguettes kags"
 ```
