@@ -6,13 +6,14 @@
 // For more information, see https://opensource.org/licenses/MIT.
 
 const wordslist = require("../words-list.json");
-
 const isModule = require.main !== module;
 // map each word to its index
 const wordsindex = {};
 wordslist.map((word, index) => {
   wordsindex[word] = index;
 });
+
+const wordsCount = BigInt(wordslist.length);
 
 // encode number into list of words
 const encode = (number) => {
@@ -22,46 +23,17 @@ const encode = (number) => {
   }
 
   const words = [];
-  const number_to_encode = BigInt(number);
+  let number_to_encode = BigInt(number);
 
-  // Calculate the maximum bit length of the binary representation
-  // of the numbers in the wordslist
-  const maxBitLength = Math.floor(Math.log2(wordslist.length));
-
-  const binary_string = number_to_encode.toString(2).split("");
-
-  // Initialize the current string of bits with '1'
-  // to avoid binary strings starting with '0'
-  let curr = "1";
-
-  for (let i = 0; i < binary_string.length; i++) {
-    const top = binary_string[i];
-
-    // If the current string of bits is less than or equal the max bit length
-    // and the current string plus the next bit can be converted to
-    // a valid index for the wordslist array, append the next bit
-    if (
-      curr.length <= maxBitLength &&
-      parseInt(curr + top, 2) < wordslist.length
-    ) {
-      curr += top;
-    }
-    // Otherwise, convert the current binary string to decimal and append the
-    // word at that index then reset the current string with the next bit
-    else {
-      words.push(wordslist[parseInt(curr, 2)]);
-      curr = "1" + top;
-    }
+  while (number_to_encode) {
+    words.push(wordslist[number_to_encode % wordsCount]);
+    number_to_encode /= wordsCount;
   }
 
-  if (curr.length) {
-    words.push(wordslist[parseInt(curr, 2)]);
-  }
-
-  return words.join(" ");
+  return words.reverse();
 };
 
-// decode list of words into a number
+// decode list of words into number
 const decode = (word_list) => {
   // Make sure the word_list argument is a valid array or string
   if (!Array.isArray(word_list) && typeof word_list !== "string") {
@@ -69,24 +41,22 @@ const decode = (word_list) => {
     return null;
   }
 
-  // If the word_list argument is a string, split it by non-alphabetical characters
-  let words = (
-    Array.isArray(word_list) ? word_list : word_list.split(/[^a-z]+/i)
-  ).map((w) => w.toLowerCase());
+  let number = 0n;
+  let l = BigInt(word_list.length - 1);
+  for (let i = 0; i < word_list.length; ++i) {
+    const word = word_list[i];
 
-  let binary_string = "";
-  for (const word of words) {
     if (!(word in wordsindex)) {
       if (!isModule) console.error(`'${word}' not found in word list`);
       return null;
     }
-    const wordIndexBits = wordsindex[word]
-      .toString(2) // convert to binary
-      .slice(1); // remove first bit
-    binary_string += wordIndexBits;
+
+    const v = wordsindex[word];
+    number += BigInt(v) * wordsCount ** l;
+    l -= 1n;
   }
 
-  return BigInt(`0b${binary_string}`).toString();
+  return number;
 };
 
 module.exports = {
