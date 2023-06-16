@@ -2,7 +2,7 @@
 
 A method of encoding numbers into a sequence of words.
 
-The mnemonic coding system uses a dictionary of words to encode numbers. The binary representation of the number is divided into chunks, and each chunk is converted into a word from the dictionary. This allows for easy storage and reproduction of the encoded number, as it can be easily typed as a sequence of words.
+The mnemonic coding system uses a dictionary of words to encode numbers, this allows for easy storage and reproduction of the encoded number, as it can be easily typed as a sequence of words.
 
 One advantage of this system is that it allows for the encoding of numbers of any bit length, rather than just numbers with a bit length that is a multiple of 32, as is the case with [BIP39](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki).
 
